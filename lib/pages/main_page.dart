@@ -4,7 +4,6 @@ import 'package:codebrew2020patient/pages/restriction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import 'shop_items_page.dart';
 import 'prescription_list.dart';
 import 'medications_page.dart';
 
