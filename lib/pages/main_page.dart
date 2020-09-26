@@ -1,3 +1,4 @@
+import 'package:codebrew2020patient/pages/appointment_page.dart';
 import 'package:codebrew2020patient/pages/restriction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -208,7 +209,7 @@ class _MainPageState extends State<MainPage> {
                     ]),
               ),
               onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => ShopItemsPage())),
+                  .push(MaterialPageRoute(builder: (_) => AppointmentPage())),
             )
           ],
           staggeredTiles: [
