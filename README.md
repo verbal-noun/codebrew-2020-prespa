@@ -37,11 +37,11 @@ We firmly believe, that care does not have to end when the patient has finished 
 Our main customer are hospitals and we have developed a robust interface for them to input, monitor and respond to the patients needs. Hene we hav also developed a terminal interface fo the doctors. 
 
 
-{Screenshot for doctor's interfact}
+<img src="img/prespa-doctor.png" alt="Prespa Doctor" width="500">
 
 
+<img src="img/backend-pic.png" alt="Sample Backend" width="500">
 
-{Screenshot for API}
 
 
 # Key technology
