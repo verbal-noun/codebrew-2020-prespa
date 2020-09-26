@@ -17,7 +17,13 @@ We firmly believe, that care does not have to end when the patient has finished 
 | ------------- |:-------------:| -----:|
 | ![Screen 1](img/patient-db.png)    | ![Screen 2](img/medications-list.png) | ![Screen 3](img/prescriptions.png) |
 
-
+# How to run
+* clone the repository
+* install the flutter [sdk](https://flutter.dev/docs/get-started/install)
+* run `flutter doctor` in terminal to check your flutter installation
+* install [Android Studio](https://developer.android.com/studio/install)
+* create an virtual Android device and run the app in Android Studio
+* for testing, use the default login credentials: email admin@example.com password admin
 
 # Core features 
 - Enable patients to keep track of understand prescriptions. 
