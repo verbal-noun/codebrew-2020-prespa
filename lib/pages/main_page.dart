@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'shop_items_page.dart';
 import 'prescription_list.dart';
+import 'medications_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -124,6 +125,8 @@ class _MainPageState extends State<MainPage> {
                           style: TextStyle(color: Colors.teal)),
                     ]),
               ),
+              onTap: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => MedicationPage())),
             ),
             _buildTile(
               Padding(
