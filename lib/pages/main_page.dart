@@ -4,14 +4,16 @@ import 'package:codebrew2020patient/pages/faq.dart';
 import 'package:codebrew2020patient/pages/restriction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_login/flutter_login.dart';
 
-import 'shop_items_page.dart';
-import 'prescription_list.dart';
+import 'prescription_page.dart';
+import 'medications_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
+
 
 class _MainPageState extends State<MainPage> {
   static const double CARD_TITLE_SIZE = 20.0;
@@ -28,7 +30,38 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: customAppBar('Hello Kaif'),
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(80.0),
+            child: AppBar(
+              elevation: 2.0,
+              backgroundColor: Colors.pinkAccent,
+              title: Text('Hello, Kaif',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 30.0)),
+              actions: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(top: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Material(
+                          color: Colors.grey,
+                          shape: CircleBorder(),
+                          child: Container(
+                            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.person,
+                                color: Colors.white, size: 30.0),
+                          ))),
+                    ],
+                  ),
+                )
+              ],
+            )),
         body: StaggeredGridView.count(
           crossAxisCount: 2,
           crossAxisSpacing: 12.0,
@@ -97,10 +130,12 @@ class _MainPageState extends State<MainPage> {
                         Text('Active medications',
                             style: TextStyle(color: Colors.green)),
                       ]),
-                    Image(image: AssetImage('res/images/plant.png'),)
+                    Image(image: AssetImage('assets/images/plant.png'),)
                   ],
                 ),
               ),
+              onTap: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => MedicationPage())),
             ),
             _buildTile(
               Padding(

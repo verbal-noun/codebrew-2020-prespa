@@ -1,5 +1,6 @@
 import 'package:codebrew2020patient/components/appbar.dart';
 import 'package:codebrew2020patient/components/datetile.dart';
+import 'package:codebrew2020patient/pages/prescription_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -8,7 +9,11 @@ class PrescriptionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: customAppBar('Prescriptions'),
+        appBar: AppBar(
+          elevation: 0.1,
+          backgroundColor: Colors.blueAccent,
+          title: Text('Prescriptions'),
+        ),
         body: StaggeredGridView.count(
             crossAxisCount: 2,
             crossAxisSpacing: 12.0,
@@ -16,11 +21,20 @@ class PrescriptionPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             children: <Widget>[
               _prescriptionTile(
-                  PrescriptionWidget('29', 'July', 'Amanda Wang', 'Back Pain')),
+                PrescriptionWidget('29', 'July', 'Amanda Wang', 'Back Pain'),
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => PrescriptionItem())),
+              ),
               _prescriptionTile(
-                  PrescriptionWidget('21', 'Sept', 'Vinesh Balan', 'Diabetes')),
+                PrescriptionWidget('21', 'Sept', 'Vinesh Balan', 'Diabetes'),
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => PrescriptionItem())),
+              ),
               _prescriptionTile(
-                  PrescriptionWidget('28', 'Sept', 'Vinesh Balan', 'Diabetes'))
+                PrescriptionWidget('28', 'Sept', 'Vinesh Balan', 'Diabetes'),
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => PrescriptionItem())),
+              )
             ],
             staggeredTiles: [
               StaggeredTile.extent(2, 110.0),
@@ -50,32 +64,34 @@ class PrescriptionWidget extends StatelessWidget {
   String month;
   String doctorName;
   String diagDescription;
+
   String get doctor => 'Doctor: ' + '$doctorName';
+
   String get diagnosis => 'Diagnosis: ' + '$diagDescription';
-  PrescriptionWidget(this.day, this.month, this.doctorName, this.diagDescription);
+
+  PrescriptionWidget(
+      this.day, this.month, this.doctorName, this.diagDescription);
 
   @override
   Widget build(BuildContext context) {
-    return
-            DateTileRow(
-              day: day,
-              month: month,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(doctor,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20.0)),
-                  Text(diagnosis,
-                      style: TextStyle(color: Colors.black, fontSize: 16.0)),
-                  Text('View prescription',
-                      style: TextStyle(color: Colors.grey, fontSize: 14.0))
-                ],
-              ),
-            );
+    return DateTileRow(
+      day: day,
+      month: month,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text(doctor,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20.0)),
+          Text(diagnosis,
+              style: TextStyle(color: Colors.black, fontSize: 16.0)),
+          Text('View prescription',
+              style: TextStyle(color: Colors.grey, fontSize: 14.0))
+        ],
+      ),
+    );
   }
 }
-
