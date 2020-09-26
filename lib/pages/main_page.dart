@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'shop_items_page.dart';
+import 'prescription_list.dart';
 
 class MainPage extends StatefulWidget
 {
@@ -15,6 +16,7 @@ class _MainPageState extends State<MainPage>
   static final List<String> chartDropdownItems = [ 'Last 7 days', 'Last month', 'Last year' ];
   String actualDropdown = chartDropdownItems[0];
   int actualChart = 0;
+  static const IconData list = IconData(0xe896, fontFamily: 'MaterialIcons', matchTextDirection: true);
 
   @override
   Widget build(BuildContext context)
@@ -66,26 +68,27 @@ class _MainPageState extends State<MainPage>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>
                     [
-                      Text('Total Views', style: TextStyle(color: Colors.blueAccent)),
-                      Text('265K', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 34.0))
+                      Text('Prescriptions', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 34.0)),
+                      Text('View my prescriptions', style: TextStyle(color: Colors.blueAccent, fontSize: 16.0))
                     ],
                   ),
                   Material
                   (
-                    color: Colors.blue,
+                    color: Colors.blueAccent,
                     borderRadius: BorderRadius.circular(24.0),
                     child: Center
                     (
                       child: Padding
                       (
                         padding: const EdgeInsets.all(16.0),
-                        child: Icon(Icons.timeline, color: Colors.white, size: 30.0),
+                        child: Icon(Icons.description, color: Colors.white, size: 30.0),
                       )
                     )
                   )
                 ]
               ),
             ),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => PrescriptionPage())),
           ),
           _buildTile(
             Padding(
@@ -103,12 +106,12 @@ class _MainPageState extends State<MainPage>
                     child: Padding
                     (
                       padding: const EdgeInsets.all(16.0),
-                      child: Icon(Icons.settings_applications, color: Colors.white, size: 30.0),
+                      child: Icon(Icons.add_circle_outline, color: Colors.white, size: 30.0),
                     )
                   ),
                   Padding(padding: EdgeInsets.only(bottom: 16.0)),
-                  Text('General', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 24.0)),
-                  Text('Images, Videos', style: TextStyle(color: Colors.black45)),
+                  Text('Medication', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 24.0)),
+                  Text('Active medications', style: TextStyle(color: Colors.black45)),
                 ]
               ),
             ),
@@ -125,71 +128,47 @@ class _MainPageState extends State<MainPage>
                 [
                   Material
                   (
-                    color: Colors.amber,
+                    color: Colors.redAccent,
                     shape: CircleBorder(),
                     child: Padding
                     (
                       padding: EdgeInsets.all(16.0),
-                      child: Icon(Icons.notifications, color: Colors.white, size: 30.0),
+                      child: Icon(Icons.not_interested, color: Colors.white, size: 30.0),
                     )
                   ),
                   Padding(padding: EdgeInsets.only(bottom: 16.0)),
-                  Text('Alerts', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 24.0)),
-                  Text('All ', style: TextStyle(color: Colors.black45)),
+                  Text('Restrictions', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 22.0)),
+                  Text('Things not to do', style: TextStyle(color: Colors.black45)),
                 ]
               ),
             ),
           ),
           _buildTile(
             Padding
+              (
+              padding: const EdgeInsets.all(24.0),
+              child: Column
                 (
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column
-                  (
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>
-                    [
-                      Row
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>
+                  [
+                    Material
                       (
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>
-                        [
-                          Column
+                        color: Colors.amber,
+                        shape: CircleBorder(),
+                        child: Padding
                           (
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>
-                            [
-                              Text('Revenue', style: TextStyle(color: Colors.green)),
-                              Text('\$16K', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 34.0)),
-                            ],
-                          ),
-                          DropdownButton
-                          (
-                            isDense: true,
-                            value: actualDropdown,
-                            onChanged: (String value) => setState(()
-                            {
-                              actualDropdown = value;
-                              actualChart = chartDropdownItems.indexOf(value); // Refresh the chart
-                            }),
-                            items: chartDropdownItems.map((String title)
-                            {
-                              return DropdownMenuItem
-                              (
-                                value: title,
-                                child: Text(title, style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w400, fontSize: 14.0)),
-                              );
-                            }).toList()
-                          )
-                        ],
-                      ),
-                      Padding(padding: EdgeInsets.only(bottom: 4.0)),
-                    ],
-                  )
-                ),
+                          padding: EdgeInsets.all(16.0),
+                          child: Icon(Icons.info, color: Colors.white, size: 30.0),
+                        )
+                    ),
+                    Padding(padding: EdgeInsets.only(bottom: 16.0)),
+                    Text('FAQ', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 24.0)),
+                    Text('All ', style: TextStyle(color: Colors.black45)),
+                  ]
+              ),
+            ),
           ),
           _buildTile(
             Padding
@@ -207,20 +186,20 @@ class _MainPageState extends State<MainPage>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>
                     [
-                      Text('Shop Items', style: TextStyle(color: Colors.redAccent)),
-                      Text('173', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 34.0))
+                      Text('Follow-up', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 20.0)),
+                      Text('Appointments', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 20.0))
                     ],
                   ),
                   Material
                   (
-                    color: Colors.red,
+                    color: Colors.purpleAccent,
                     borderRadius: BorderRadius.circular(24.0),
                     child: Center
                     (
                       child: Padding
                       (
                         padding: EdgeInsets.all(16.0),
-                        child: Icon(Icons.store, color: Colors.white, size: 30.0),
+                        child: Icon(Icons.calendar_today, color: Colors.white, size: 30.0),
                       )
                     )
                   )
@@ -232,9 +211,9 @@ class _MainPageState extends State<MainPage>
         ],
         staggeredTiles: [
           StaggeredTile.extent(2, 110.0),
-          StaggeredTile.extent(1, 180.0),
-          StaggeredTile.extent(1, 180.0),
-          StaggeredTile.extent(2, 220.0),
+          StaggeredTile.extent(2, 180.0),
+          StaggeredTile.extent(1, 190.0),
+          StaggeredTile.extent(1, 190.0),
           StaggeredTile.extent(2, 110.0),
         ],
       )
