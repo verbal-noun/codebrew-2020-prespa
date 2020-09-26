@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget
     return MaterialApp
       (
       title: 'Dashboard',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.pink, scaffoldBackgroundColor: Colors.white, fontFamily: 'Montserrat'),
       home: MainPage(),
     );
   }

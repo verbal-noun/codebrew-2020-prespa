@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:codebrew2020patient/pages/restriction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -10,7 +10,9 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
+
 class _MainPageState extends State<MainPage> {
+  static const double CARD_TITLE_SIZE = 20.0;
   static final List<String> chartDropdownItems = [
     'Last 7 days',
     'Last month',
@@ -77,7 +79,7 @@ class _MainPageState extends State<MainPage> {
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 34.0)),
+                                  fontSize: CARD_TITLE_SIZE)),
                           Text('View my prescriptions',
                               style: TextStyle(
                                   color: Colors.blueAccent, fontSize: 16.0))
@@ -117,7 +119,7 @@ class _MainPageState extends State<MainPage> {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 24.0)),
+                              fontSize: CARD_TITLE_SIZE)),
                       Text('Active medications',
                           style: TextStyle(color: Colors.black45)),
                     ]),
@@ -143,11 +145,13 @@ class _MainPageState extends State<MainPage> {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 22.0)),
+                              fontSize: CARD_TITLE_SIZE)),
                       Text('Things not to do',
                           style: TextStyle(color: Colors.black45)),
                     ]),
               ),
+              onTap: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => RestrictionPage())),
             ),
             _buildTile(
               Padding(
@@ -169,7 +173,7 @@ class _MainPageState extends State<MainPage> {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 24.0)),
+                              fontSize: CARD_TITLE_SIZE)),
                       Text('All ', style: TextStyle(color: Colors.black45)),
                     ]),
               ),
@@ -185,16 +189,11 @@ class _MainPageState extends State<MainPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Follow-up',
+                          Text('Follow-up\nAppointments',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 20.0)),
-                          Text('Appointments',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 20.0))
+                                  fontSize: CARD_TITLE_SIZE)),
                         ],
                       ),
                       Material(
