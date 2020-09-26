@@ -13,6 +13,7 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
+
 class _MainPageState extends State<MainPage> {
   static const double CARD_TITLE_SIZE = 20.0;
   static final List<String> chartDropdownItems = [
@@ -32,10 +33,10 @@ class _MainPageState extends State<MainPage> {
             preferredSize: Size.fromHeight(80.0),
             child: AppBar(
               elevation: 2.0,
-              backgroundColor: Colors.pinkAccent,
+              backgroundColor: Colors.white,
               title: Text('Hello, Kaif',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.w700,
                       fontSize: 30.0)),
               actions: <Widget>[
@@ -49,12 +50,12 @@ class _MainPageState extends State<MainPage> {
                           color: Colors.grey,
                           shape: CircleBorder(),
                           child: Container(
-                              margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Icon(Icons.person,
-                                    color: Colors.white, size: 30.0),
-                              ))),
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.person,
+                                color: Colors.white, size: 30.0),
+                          ))),
                     ],
                   ),
                 )
