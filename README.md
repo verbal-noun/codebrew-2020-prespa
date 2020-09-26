@@ -2,9 +2,9 @@
 
 # Table of contents
 1. [Introduction](#Prespa)
-2. [Resources](#Core-features)
-3. [Assessment](#Integration-with-hospitals)
-4. [Submission](#Key-technology) 
+2. [Core Features](#Core-features)
+3. [Integration with Hospitals](#Integration-with-hospitals)
+4. [Key Technology](#Key-technology) 
 
 # Prespa
 Our goal is assist hospitals to provide a much more organised and positive patient experience. When a team mate shared her experience of trying the juggle the complex and vast of medical documents, prescriptions, restrictions imposed on both her parents, it became her responsibility to manage everything. We soon discovered that we were not alone in having such an experience and people across the globe have similar fructions about medical practicioners. 
