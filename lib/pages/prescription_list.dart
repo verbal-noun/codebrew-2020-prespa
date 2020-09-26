@@ -26,11 +26,14 @@ class PrescriptionPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             children: <Widget>[
               _prescriptionTile(
-                  PrescriptionWidget('19', 'Sept', 'Amanda Wang')),
+                  PrescriptionWidget('29', 'July', 'Amanda Wang', 'Back Pain')),
               _prescriptionTile(
-                  PrescriptionWidget('25', 'Sept', 'Vinesh Balan'))
+                  PrescriptionWidget('21', 'Sept', 'Vinesh Balan', 'Diabetes')),
+              _prescriptionTile(
+                  PrescriptionWidget('28', 'Sept', 'Vinesh Balan', 'Diabetes'))
             ],
             staggeredTiles: [
+              StaggeredTile.extent(2, 110.0),
               StaggeredTile.extent(2, 110.0),
               StaggeredTile.extent(2, 110.0),
             ]));
@@ -56,9 +59,10 @@ class PrescriptionWidget extends StatelessWidget {
   String day;
   String month;
   String doctorName;
-  String get date => '$day' + '\n$month';
+  String diagDescription;
   String get doctor => 'Doctor: ' + '$doctorName';
-  PrescriptionWidget(this.day, this.month, this.doctorName);
+  String get diagnosis => 'Diagnosis: ' + '$diagDescription';
+  PrescriptionWidget(this.day, this.month, this.doctorName, this.diagDescription);
 
   @override
   Widget build(BuildContext context) {
@@ -68,14 +72,14 @@ class PrescriptionWidget extends StatelessWidget {
               month: month,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(doctor,
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w700,
                           fontSize: 20.0)),
-                  Text('Diagnosis: Diabetes',
+                  Text(diagnosis,
                       style: TextStyle(color: Colors.black, fontSize: 16.0)),
                   Text('View prescription',
                       style: TextStyle(color: Colors.grey, fontSize: 14.0))
