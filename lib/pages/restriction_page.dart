@@ -12,7 +12,7 @@ class _RestrictionPageState extends State<RestrictionPage> {
   _getRestrictions() {
     List<Restriction> restrictions = List.from(_restrictions);
     restrictions
-        .add(Restriction("", "Must exercise twice a week", "xsafdgcsf"));
+        .add(Restriction("", "Avoid rigorous exercise (running, cycling etc...)", "xsafdgcsf"));
     restrictions.add(Restriction("Hexadine",
         "Do not eat grapefruit 2 hours after ingestion", "xsafdgcsf"));
     restrictions.add(Restriction("Panadol",

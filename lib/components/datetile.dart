@@ -66,7 +66,7 @@ class DateTile extends StatelessWidget {
               print('Not set yet');
             },
             child: Padding(
-              padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0, bottom: 20.0),
+              padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0, bottom: 20.0),
               child: Row(
                   children: <Widget>[
                     Container(
