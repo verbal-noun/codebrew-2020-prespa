@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget
   {
     return MaterialApp
       (
+      debugShowCheckedModeBanner: false,
       title: 'Dashboard',
       theme: ThemeData(primarySwatch: Colors.pink, scaffoldBackgroundColor: Colors.white, fontFamily: 'Montserrat'),
       home: LoginScreen(),
