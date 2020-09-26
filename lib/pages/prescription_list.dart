@@ -1,3 +1,4 @@
+import 'package:codebrew2020patient/components/appbar.dart';
 import 'package:codebrew2020patient/components/datetile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -7,18 +8,7 @@ class PrescriptionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          leading: IconButton(
-            color: Colors.black,
-            onPressed: () => Navigator.of(context).pop(),
-            icon: Icon(Icons.arrow_back, color: Colors.black),
-          ),
-          title: Text('Prescriptions',
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
-        ),
+        appBar: customAppBar('Prescriptions'),
         body: StaggeredGridView.count(
             crossAxisCount: 2,
             crossAxisSpacing: 12.0,
@@ -67,7 +57,7 @@ class PrescriptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-            DateTile(
+            DateTileRow(
               day: day,
               month: month,
               child: Column(

@@ -1,3 +1,5 @@
+import 'package:codebrew2020patient/pages/appointment_page.dart';
+import 'package:codebrew2020patient/pages/faq.dart';
 import 'package:codebrew2020patient/pages/restriction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -10,7 +12,6 @@ class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
-
 
 class _MainPageState extends State<MainPage> {
   static const double CARD_TITLE_SIZE = 20.0;
@@ -48,12 +49,12 @@ class _MainPageState extends State<MainPage> {
                           color: Colors.grey,
                           shape: CircleBorder(),
                           child: Container(
-                            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                               child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Icon(Icons.person,
-                                color: Colors.white, size: 30.0),
-                          ))),
+                                padding: EdgeInsets.all(8.0),
+                                child: Icon(Icons.person,
+                                    color: Colors.white, size: 30.0),
+                              ))),
                     ],
                   ),
                 )
@@ -180,6 +181,8 @@ class _MainPageState extends State<MainPage> {
                       Text('All ', style: TextStyle(color: Colors.amber)),
                     ]),
               ),
+              onTap: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => FAQPage())),
             ),
             _buildTile(
               Padding(
@@ -213,7 +216,7 @@ class _MainPageState extends State<MainPage> {
                     ]),
               ),
               onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => ShopItemsPage())),
+                  .push(MaterialPageRoute(builder: (_) => AppointmentPage())),
             )
           ],
           staggeredTiles: [
