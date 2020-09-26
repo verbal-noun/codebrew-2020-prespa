@@ -81,9 +81,9 @@ class AppointmentTile extends StatelessWidget {
         children: <Widget>[
           Text(appointmentName,
               style: TextStyle(color: Colors.black, fontSize: 20.0)),
-          Text(hospital, style: TextStyle(color: Colors.black, fontSize: 20.0)),
+          Text(hospital, style: TextStyle(color: Colors.black, fontSize: 15.0)),
           Text('Doctor ' + doctorName,
-              style: TextStyle(color: Colors.black, fontSize: 20.0)),
+              style: TextStyle(color: Colors.black, fontSize: 15.0)),
         ],
       ),
     );

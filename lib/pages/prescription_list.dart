@@ -8,7 +8,11 @@ class PrescriptionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: customAppBar('Prescriptions'),
+        appBar: AppBar(
+          elevation: 0.1,
+          backgroundColor: Colors.blueAccent,
+          title: Text('Prescriptions'),
+        ),
         body: StaggeredGridView.count(
             crossAxisCount: 2,
             crossAxisSpacing: 12.0,

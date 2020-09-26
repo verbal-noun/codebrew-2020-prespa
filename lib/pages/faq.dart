@@ -25,7 +25,11 @@ class _FAQPageState extends State<FAQPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar('FAQ'),
+      appBar: AppBar(
+        elevation: 0.1,
+        backgroundColor: Colors.amber,
+        title: Text('FAQ'),
+      ),
       body: Container(
         child: ListView(children: _faqs,),
       ),

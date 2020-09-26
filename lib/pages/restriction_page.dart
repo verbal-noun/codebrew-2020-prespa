@@ -31,7 +31,11 @@ class _RestrictionPageState extends State<RestrictionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: customAppBar('Restrictions'),
+        appBar: AppBar(
+          elevation: 0.1,
+          backgroundColor: Colors.redAccent,
+          title: Text('Restrictions'),
+        ),
         body: Center(
             child: Container(
           margin: EdgeInsets.only(top: 20.0),
