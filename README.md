@@ -7,6 +7,6 @@ We firmly believe, that care does not have to end when the patient has finished 
 
 
 
-| Tables        | Are           | Cool  |
+| Dashboard        | Medication list           | Prescriptions     |
 | ------------- |:-------------:| -----:|
 | ![Screen 1](img/patient-db.png)    | ![Screen 2](img/medications-list.png) | ![Screen 3](img/prescriptions.png) |
