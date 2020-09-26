@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget
       debugShowCheckedModeBanner: false,
       title: 'Dashboard',
       theme: ThemeData(primarySwatch: Colors.pink, scaffoldBackgroundColor: Colors.white, fontFamily: 'Montserrat'),
-      home: MainPage(),
+      home: LoginScreen(),
     );
   }
 }
