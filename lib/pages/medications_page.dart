@@ -140,15 +140,12 @@ List getMedicineName() {
             "(stiffness, tremors, spasms, poor muscle control). "
             "Azilect is sometimes used with another medicine called levodopa."),
     MedicineItem(
-        title: "Aderall",
+        title: "Adderall",
         givenBy: "Dr. Wang",
         indicatorValue: 0.33,
         price: 50,
         content:
-        "Azilect (rasagiline) works by increasing the levels of certain chemicals in the brain. "
-            "Azilect is used to treat symptoms of Parkinson's disease"
-            "(stiffness, tremors, spasms, poor muscle control). "
-            "Azilect is sometimes used with another medicine called levodopa."),
+        "Adderall helps to improve concentration and focus. As a central nervous system stimulant it can also have the very same effects on people without ADHD."),
 
         MedicineItem(
         title: "MiraLAX",

@@ -11,7 +11,7 @@ class _FAQPageState extends State<FAQPage> {
   _getFAQ() {
     List<FAQTile> faqs = List.from(_faqs);
     faqs.add(FAQTile('Can I visit my friends?', 'No, you risk spreading the disease to the community around you'));
-    faqs.add(FAQTile('Can I visit my friends?', 'No, you risk spreading the disease to the community around you'));
+    faqs.add(FAQTile('What exercises can I do?', 'You can take on less strenuous exercises like walking, swimming and yoga'));
     setState(() {
       _faqs = faqs;
     });

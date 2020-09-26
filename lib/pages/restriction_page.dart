@@ -13,10 +13,10 @@ class _RestrictionPageState extends State<RestrictionPage> {
     List<Restriction> restrictions = List.from(_restrictions);
     restrictions
         .add(Restriction("", "Avoid rigorous exercise (running, cycling etc...)", "xsafdgcsf"));
-    restrictions.add(Restriction("Hexadine",
-        "Do not eat grapefruit 2 hours after ingestion", "xsafdgcsf"));
-    restrictions.add(Restriction("Panadol",
-        "Do not go to sleep immediately after ingestion", "xsafdgcsf"));
+    restrictions.add(Restriction("Adderall",
+        "Do not take adderall if you are pregnant or feeling dizzy or nauseous", "xsafdgcsf"));
+    restrictions.add(Restriction("Senna",
+        "Use of senna should be limited to once per week", "xsafdgcsf"));
     setState(() {
       _restrictions = restrictions;
     });

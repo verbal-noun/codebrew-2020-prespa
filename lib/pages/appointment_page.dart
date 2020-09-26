@@ -24,8 +24,8 @@ class _AppointmentPageState extends State<AppointmentPage> {
         '29',
         'Sept',
         'Joseph Eskbos',
-        "Saint John's Hospital",
-        'Post Surgery Checkup',
+        "Auburn General Practice",
+        'Flu Shot',
         'https://www.google.com'));
     setState(() {
       _appointments = appointments;
