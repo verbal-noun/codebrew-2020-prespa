@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class PrescriptionPage extends StatelessWidget {
   @override
@@ -6,21 +7,100 @@ class PrescriptionPage extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-            elevation: 0.0,
-            backgroundColor: Colors.transparent,
-            leading: IconButton
-              (
-              color: Colors.black,
-              onPressed: () => Navigator.of(context).pop(),
-              icon: Icon(Icons.arrow_back, color: Colors.black),
-            ),
-            title:
-            Text('Prescriptions', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          leading: IconButton(
+            color: Colors.black,
+            onPressed: () => Navigator.of(context).pop(),
+            icon: Icon(Icons.arrow_back, color: Colors.black),
+          ),
+          title: Text('Prescriptions',
+              style:
+              TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
         ),
-      body: Column(
+        body: StaggeredGridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 12.0,
+            mainAxisSpacing: 12.0,
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            children: <Widget>[
+              _prescriptionTile(
+                  PrescriptionWidget('19', 'Sept', 'Amanda Wang')),
+              _prescriptionTile(PrescriptionWidget('25', 'Sept', 'Vinesh Balan'))
+            ],
+            staggeredTiles: [
+              StaggeredTile.extent(2, 110.0),
+              StaggeredTile.extent(2, 110.0),
+            ]));
+  }
 
-      ),
+  Widget _prescriptionTile(Widget child, {Function() onTap}) {
+    return Material(
+        elevation: 14.0,
+        borderRadius: BorderRadius.circular(12.0),
+        shadowColor: Color(0x802196F3),
+        child: InkWell(
+          // Do onTap() if it isn't null, otherwise do print()
+            onTap: onTap != null
+                ? () => onTap()
+                : () {
+              print('Not set yet');
+            },
+            child: child));
+  }
+}
+
+  class PrescriptionWidget extends StatelessWidget {
+
+    String day;
+    String month;
+    String doctorName;
+    String get date => '$day' +'\n$month';
+    String get doctor => 'Doctor: ' + '$doctorName';
+    PrescriptionWidget(this.day, this.month, this.doctorName);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              //borderRadius: BorderRadius.circular(20.0),
+              child: Column(children: [
+                Text(date,
+                  textScaleFactor: 1.5,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0),
+                ),
+              ]),
+              padding: EdgeInsets.fromLTRB(10, 5, 13, 5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14.0),
+                color: Colors.blueAccent,
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(doctor,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20.0)),
+                Text('Diagnosis: Diabetes',
+                    style: TextStyle(color: Colors.black, fontSize: 16.0)),
+                Text('View prescription',
+                    style: TextStyle(color: Colors.grey, fontSize: 16.0))
+              ],
+            )
+          ]),
     );
   }
-  
-}
+  }
