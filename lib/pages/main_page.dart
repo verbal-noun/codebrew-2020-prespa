@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -35,7 +36,7 @@ class _MainPageState extends State<MainPage> {
                       fontSize: 30.0)),
               actions: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(right: 8.0),
+                  margin: EdgeInsets.only(top: 12),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,8 +45,9 @@ class _MainPageState extends State<MainPage> {
                           color: Colors.grey,
                           shape: CircleBorder(),
                           child: Container(
+                            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                               child: Padding(
-                            padding: EdgeInsets.all(16.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Icon(Icons.person,
                                 color: Colors.white, size: 30.0),
                           ))),
