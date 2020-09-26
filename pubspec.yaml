@@ -54,6 +54,7 @@ flutter:
   assets:
     - assets/images/pill-bottle-yellow.png
     - assets/images/bird-pink.png
+    - assets/images/plant.png
     - assets/images/prespa-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

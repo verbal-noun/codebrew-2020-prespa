@@ -1,3 +1,4 @@
+import 'package:codebrew2020patient/components/appbar.dart';
 import 'package:codebrew2020patient/pages/appointment_page.dart';
 import 'package:codebrew2020patient/pages/faq.dart';
 import 'package:codebrew2020patient/pages/restriction_page.dart';
@@ -104,28 +105,34 @@ class _MainPageState extends State<MainPage> {
             ),
             _buildTile(
               Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Material(
-                          color: Colors.teal,
-                          shape: CircleBorder(),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Icon(Icons.add_circle_outline,
-                                color: Colors.white, size: 30.0),
-                          )),
-                      Padding(padding: EdgeInsets.only(bottom: 16.0)),
-                      Text('Medication',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: CARD_TITLE_SIZE)),
-                      Text('Active medications',
-                          style: TextStyle(color: Colors.teal)),
-                    ]),
+                padding: const EdgeInsets.only(left: 24.0, right: 0, top: 24, bottom: 24),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Material(
+                            color: Colors.green,
+                            shape: CircleBorder(),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Icon(Icons.add_circle_outline,
+                                  color: Colors.white, size: 30.0),
+                            )),
+                        Padding(padding: EdgeInsets.only(bottom: 16.0)),
+                        Text('Medication',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                                fontSize: CARD_TITLE_SIZE)),
+                        Text('Active medications',
+                            style: TextStyle(color: Colors.green)),
+                      ]),
+                    Image(image: AssetImage('assets/images/plant.png'),)
+                  ],
+                ),
               ),
               onTap: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (_) => MedicationPage())),
@@ -138,7 +145,7 @@ class _MainPageState extends State<MainPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Material(
-                          color: Colors.redAccent,
+                          color: Colors.pinkAccent,
                           shape: CircleBorder(),
                           child: Padding(
                             padding: EdgeInsets.all(16.0),
@@ -152,7 +159,7 @@ class _MainPageState extends State<MainPage> {
                               fontWeight: FontWeight.w700,
                               fontSize: CARD_TITLE_SIZE)),
                       Text('Things not to do',
-                          style: TextStyle(color: Colors.redAccent)),
+                          style: TextStyle(color: Colors.pinkAccent)),
                     ]),
               ),
               onTap: () => Navigator.of(context)
@@ -202,11 +209,11 @@ class _MainPageState extends State<MainPage> {
                                   fontWeight: FontWeight.w700,
                                   fontSize: CARD_TITLE_SIZE)),
                           Text('View calendar',
-                              style: TextStyle(color: Colors.purpleAccent)),
+                              style: TextStyle(color: Colors.deepPurple)),
                         ],
                       ),
                       Material(
-                          color: Colors.purpleAccent,
+                          color: Colors.deepPurple,
                           borderRadius: BorderRadius.circular(24.0),
                           child: Center(
                               child: Padding(

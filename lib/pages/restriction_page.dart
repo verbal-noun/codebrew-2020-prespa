@@ -95,13 +95,13 @@ class Restriction extends StatelessWidget {
           ? Positioned(
               left: 10.0,
               child: Image(
-                image: AssetImage('res/images/bird-pink.png'),
+                image: AssetImage('assets/images/bird-pink.png'),
                 width: 60.0,
               ))
           : Positioned(
               left: -10.0,
               child: Image(
-                image: AssetImage('res/images/pill-bottle-yellow.png'),
+                image: AssetImage('assets/images/pill-bottle-yellow.png'),
                 width: 80.0,
               )),
     ]);
