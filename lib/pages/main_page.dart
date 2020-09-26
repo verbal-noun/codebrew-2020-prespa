@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_login/flutter_login.dart';
 
-import 'prescription_list.dart';
+import 'prescription_page.dart';
 import 'medications_page.dart';
 
 class MainPage extends StatefulWidget {
