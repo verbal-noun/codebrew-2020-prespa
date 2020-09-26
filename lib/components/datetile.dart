@@ -82,7 +82,7 @@ class DateTile extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(10, 5, 13, 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14.0),
-                        color: Colors.blueAccent,
+                        color: Colors.deepPurple,
                       ),
                     ),
                     SizedBox(width: 10.0,),

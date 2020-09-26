@@ -41,7 +41,11 @@ class _AppointmentPageState extends State<AppointmentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: customAppBar('Appointments'),
+        appBar: AppBar(
+          elevation: 0.1,
+          backgroundColor: Colors.deepPurple,
+          title: Text('Appointments'),
+        ),
         body: Center(
             child: Container(
                 margin: EdgeInsets.all(20.0),
@@ -52,7 +56,8 @@ class _AppointmentPageState extends State<AppointmentPage> {
                         padding: EdgeInsets.only(left: 20.0, top: 15.0),
                         child: Text(
                           'You have no more appointments',
-                          style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w700),
+                          style: TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.w700),
                         ))
                   ],
                 ))));
