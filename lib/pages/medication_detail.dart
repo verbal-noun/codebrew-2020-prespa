@@ -9,9 +9,9 @@ class DetailPage extends StatelessWidget {
     final levelIndicator = Container(
       child: Container(
         child: LinearProgressIndicator(
-            backgroundColor: Color.fromRGBO(209, 224, 224, 0.2),
+            backgroundColor: Colors.white54,
             value: medicine.indicatorValue,
-            valueColor: AlwaysStoppedAnimation(Colors.green)),
+            valueColor: AlwaysStoppedAnimation(Colors.lightGreenAccent)),
       ),
     );
 
@@ -67,7 +67,7 @@ class DetailPage extends StatelessWidget {
       children: <Widget>[
         Container(
           height: MediaQuery.of(context).size.height * 0.5,
-          padding: EdgeInsets.all(40.0),
+          padding: EdgeInsets.all(20.0),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(color: Colors.teal),
           child: Center(
@@ -111,9 +111,9 @@ class DetailPage extends StatelessWidget {
     );
 
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView( child: Column(
         children: <Widget>[topContent, bottomContent],
       ),
-    );
+    ));
   }
 }
