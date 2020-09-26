@@ -114,7 +114,7 @@ class _ListPageState extends State<ListPage> {
 
     final topAppBar = AppBar(
       elevation: 0.1,
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.green,
       title: Text(widget.title),
     );
 
