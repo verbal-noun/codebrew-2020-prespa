@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'lesson.dart';
+import 'medication.dart';
 import 'medication_detail.dart';
 
 class MedicationPage extends StatelessWidget {
@@ -46,14 +46,15 @@ class _ListPageState extends State<ListPage> {
 
   @override
   Widget build(BuildContext context) {
-    ListTile makeListTile(Lesson lesson) => ListTile(
+    ListTile makeListTile(MedicineItem lesson) => ListTile(
           contentPadding:
               EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           leading: Container(
             padding: EdgeInsets.only(right: 12.0),
             decoration: new BoxDecoration(
                 border: new Border(
-                    right: new BorderSide(width: 1.0, color: Colors.white24))),
+                    right: new BorderSide(width: 1.0, color: Colors.white24))
+            ),
             child: Icon(Icons.add_circle_outline, color: Colors.white),
           ),
           title: Text(
@@ -77,7 +78,7 @@ class _ListPageState extends State<ListPage> {
                 flex: 4,
                 child: Padding(
                     padding: EdgeInsets.only(left: 10.0),
-                    child: Text(lesson.level,
+                    child: Text(lesson.givenBy,
                         style: TextStyle(color: Colors.white))),
               )
             ],
@@ -88,15 +89,25 @@ class _ListPageState extends State<ListPage> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => DetailPage(lesson: lesson)));
+                    builder: (context) => DetailPage(medicine: lesson)));
           },
         );
 
-    Card makeCard(Lesson lesson) => Card(
+    Card makeCard(MedicineItem lesson) => Card(
           elevation: 8.0,
           margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
           child: Container(
-            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+            decoration: BoxDecoration(color: Colors.blueGrey,
+            borderRadius: BorderRadius.circular(6.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 4,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+            ),
             child: makeListTile(lesson),
           ),
         );
@@ -117,12 +128,6 @@ class _ListPageState extends State<ListPage> {
       elevation: 0.1,
       backgroundColor: Colors.teal,
       title: Text(widget.title),
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.list),
-          onPressed: () {},
-        )
-      ],
     );
 
     return Scaffold(
@@ -136,9 +141,9 @@ class _ListPageState extends State<ListPage> {
 
 List getMedicineName() {
   return [
-    Lesson(
+    MedicineItem(
         title: "Azilect",
-        level: "Dr. Wang",
+        givenBy: "Dr. Wang",
         indicatorValue: 0.33,
         price: 20,
         content:
@@ -146,9 +151,9 @@ List getMedicineName() {
             "Azilect is used to treat symptoms of Parkinson's disease"
             "(stiffness, tremors, spasms, poor muscle control). "
             "Azilect is sometimes used with another medicine called levodopa."),
-    Lesson(
+    MedicineItem(
         title: "Aderall",
-        level: "Dr. Wang",
+        givenBy: "Dr. Wang",
         indicatorValue: 0.33,
         price: 50,
         content:
@@ -157,9 +162,9 @@ List getMedicineName() {
             "(stiffness, tremors, spasms, poor muscle control). "
             "Azilect is sometimes used with another medicine called levodopa."),
 
-        Lesson(
+        MedicineItem(
         title: "MiraLAX",
-        level: "Dr. Balan",
+        givenBy: "Dr. Balan",
         indicatorValue: 0.66,
         price: 30,
         content: "MiraLAX (polyethylene glycol 3350) is a laxative solution that increases the amount "
@@ -167,9 +172,9 @@ List getMedicineName() {
             "MiraLAX is used as a laxative to treat occasional constipation or irregular bowel movements."
             "MiraLAX may also be used for purposes not listed in this medication guide."),
 
-        Lesson(
+        MedicineItem(
         title: "Senna",
-        level: "Dr. Wang",
+        givenBy: "Dr. Wang",
         indicatorValue: 0.66,
         price: 30,
         content: "Senna is a natural medicine containing sennosides that are derived from the leaves "
