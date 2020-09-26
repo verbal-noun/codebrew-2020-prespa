@@ -1,3 +1,4 @@
+import 'package:codebrew2020patient/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'pages/main_page.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget
       (
       title: 'Dashboard',
       theme: ThemeData(primarySwatch: Colors.pink, scaffoldBackgroundColor: Colors.white, fontFamily: 'Montserrat'),
-      home: MainPage(),
+      home: LoginScreen(),
     );
   }
 }

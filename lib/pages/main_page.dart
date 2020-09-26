@@ -3,8 +3,8 @@ import 'package:codebrew2020patient/pages/faq.dart';
 import 'package:codebrew2020patient/pages/restriction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_login/flutter_login.dart';
 
-import 'shop_items_page.dart';
 import 'prescription_list.dart';
 import 'medications_page.dart';
 
@@ -33,10 +33,10 @@ class _MainPageState extends State<MainPage> {
             preferredSize: Size.fromHeight(80.0),
             child: AppBar(
               elevation: 2.0,
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.pinkAccent,
               title: Text('Hello, Kaif',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                       fontSize: 30.0)),
               actions: <Widget>[
