@@ -122,7 +122,7 @@ class _MainPageState extends State<MainPage> {
                               fontWeight: FontWeight.w700,
                               fontSize: CARD_TITLE_SIZE)),
                       Text('Active medications',
-                          style: TextStyle(color: Colors.black45)),
+                          style: TextStyle(color: Colors.teal)),
                     ]),
               ),
             ),
@@ -148,7 +148,7 @@ class _MainPageState extends State<MainPage> {
                               fontWeight: FontWeight.w700,
                               fontSize: CARD_TITLE_SIZE)),
                       Text('Things not to do',
-                          style: TextStyle(color: Colors.black45)),
+                          style: TextStyle(color: Colors.redAccent)),
                     ]),
               ),
               onTap: () => Navigator.of(context)
@@ -175,7 +175,7 @@ class _MainPageState extends State<MainPage> {
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
                               fontSize: CARD_TITLE_SIZE)),
-                      Text('All ', style: TextStyle(color: Colors.black45)),
+                      Text('All ', style: TextStyle(color: Colors.amber)),
                     ]),
               ),
             ),
@@ -195,6 +195,8 @@ class _MainPageState extends State<MainPage> {
                                   color: Colors.black,
                                   fontWeight: FontWeight.w700,
                                   fontSize: CARD_TITLE_SIZE)),
+                          Text('View calendar',
+                              style: TextStyle(color: Colors.purpleAccent)),
                         ],
                       ),
                       Material(
@@ -217,7 +219,7 @@ class _MainPageState extends State<MainPage> {
             StaggeredTile.extent(2, 180.0),
             StaggeredTile.extent(1, 180.0),
             StaggeredTile.extent(1, 180.0),
-            StaggeredTile.extent(2, 110.0),
+            StaggeredTile.extent(2, 114.0),
           ],
         ));
   }
