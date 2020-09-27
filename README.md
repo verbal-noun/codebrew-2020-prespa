@@ -25,7 +25,7 @@ We firmly believe, that care does not have to end when the patient has finished 
 * run `flutter doctor` in terminal to check your flutter installation
 * install [Android Studio](https://developer.android.com/studio/install)
 * create an virtual Android device and run the app in Android Studio
-* for testing, use the default login credentials: email admin@example.com password admin
+* for testing, use the default login credentials: `email admin@example.com`, `password: admin`
 
 # Core features 
 - Enable patients to keep track of understand prescriptions. 
