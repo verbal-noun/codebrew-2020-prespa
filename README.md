@@ -13,15 +13,15 @@ We firmly believe, that care does not have to end when the patient has finished 
 
 
 
-| Dashboard        | Medication list   | Prescriptions   |
+| Prescriptions        | Medication list   | Restrictions, FAQ and Appointments   |
 | ------------- |:-------------:| -----:|
-| ![Screen 1](img/patient-db.png)    | ![Screen 2](img/medications-list.png) | ![Screen 3](img/prescriptions.png) |
+| ![Screen 1](img/prespa-prescription.gif)    | ![Screen 2](img/prespa-medication.gif) | ![Screen 3](img/prespa-restrictions-faq-appointments.gif) |
 
 
 
 # Core features 
 - Enable patients to keep track of understand prescriptions. 
-- Assist in understanding comflex instructions through dedicated sections. 
+- Assist in understanding complex instructions through dedicated sections. 
 - Keep track of medications, their progression and provide additional knowledge about them.
 - Assists with follow-up schedules if any. 
 
@@ -30,11 +30,11 @@ We firmly believe, that care does not have to end when the patient has finished 
 Our main customer are hospitals and we have developed a robust interface for them to input, monitor and respond to the patients needs. Hene we hav also developed a terminal interface fo the doctors. 
 
 
-{Screenshot for doctor's interfact}
+![Hospital Client](img/prespa-doctor-client.gif)
 
 
 
-{Screenshot for API}
+![Prespa API](img/prespa-api.gif)
 
 
 # Key technology
